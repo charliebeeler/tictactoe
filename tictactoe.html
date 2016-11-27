@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<title>dodo 9</title>
+<script type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<style>
+    body{
+        width: 600px;
+        margin: 0 auto;
+        margin-top:40px;
+    }
+   div {
+        width: 175px;
+        height: 175px;
+        background-color: #80ffbf;
+        display: inline-block;
+        border: solid black 2px;
+        text-align: center;
+        vertical-align: middle;
+        margin-top: 5px;
+     
+
+    }
+    p{
+        font-size: 60px;
+
+
+    }
+    h1{
+        color: brown;
+        font-size: 45px;
+        position: relative;
+        top: -650px;
+        left: 80px;
+        z-index: 4;
+    }
+
+</style>
+<script>
+  
+
+
+</script>
+
+</head>
+
+    <body>
+
+            <button onClick = "newGame()">New game</button>
+        <section>
+            <div></div>
+            <div></div>
+            <div></div>
+
+
+        
+            <div></div>
+            <div></div>
+            <div></div>
+
+        
+
+            <div></div>
+            <div></div>
+            <div></div>
+        </section>
+        <h1 id = "message"></h1>
+        
+        
+            
+            
+    <script>
+            var message = document.getElementById("message").innerHTML = "";
+            var foo = true;
+            var gameover = false;
+            
+        $('div').one('click',function(){
+            console.log("click function ran");
+                if(!gameover){
+            if (foo === true){
+                $(this).append('<p style = "color: blue";>O</p>');
+                foo = false;
+            }
+            else {
+                $(this).append('<p style = "color: red";>X</p>');
+                foo = true;
+            }
+
+                space1 = $("div:nth-child(1)").text();
+                space2 = $("div:nth-child(2)").text();
+                space3 = $("div:nth-child(3)").text();
+                space4 = $("div:nth-child(4)").text();   
+                space5 = $("div:nth-child(5)").text();
+                space6 = $("div:nth-child(6)").text();
+                space7 = $("div:nth-child(7)").text();      
+                space8 = $("div:nth-child(8)").text();
+                space9 = $("div:nth-child(9)").text();
+
+                if(space1 === space2 && space2 === space3 && space3 !== ""){$("h1").append("Player " + space3 + " is the winner!");}
+                else if(space4 === space5 && space5 === space6 && space6 !== ""){$("h1").append("Player " + space6 + " is the winner!");gameover = true}
+                else if(space7 === space8 && space8 === space9 && space9 !== ""){$("h1").append("Player " + space9 + " is the winner!");gameover = true}
+                else if(space1 === space4 && space4 === space7 && space7 !== ""){$("h1").append("Player " + space7 + " is the winner!");gameover = true}
+                else if(space2 === space5 && space5 === space8 && space8 !== ""){$("h1").append("Player " + space8 + " is the winner!");gameover = true}
+                else if(space3 === space6 && space6 === space9 && space9 !== ""){$("h1").append("Player " + space9 + " is the winner!");gameover = true}
+                else if(space1 === space5 && space5 === space9 && space9 !== ""){$("h1").append("Player " + space9 + " is the winner!");gameover = true}
+                else if(space7 === space5 && space5 === space3 && space3 !== ""){$("h1").append("Player " + space3 + " is the winner!");gameover = true}
+            }
+        });
+        
+        function newGame(){
+            location.reload()
+        }
+        
+        
+
+        
+    </script>
+       
+    
+    </body>
+
+
+</html>
